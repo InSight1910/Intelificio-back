@@ -2,7 +2,7 @@
 
 namespace Intelificio_Back.Models
 {
-    public class Gasto : BaseEntity
+    public class Expense : BaseEntity
     {
         // Falta ID_Comunidad
         // Falta ID_Tipo_Gasto
