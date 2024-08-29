@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intelificio-Back", "Intelificio-Back.csproj", "{D7762F50-6BCB-4743-9AF4-47BEFF2E56FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7762F50-6BCB-4743-9AF4-47BEFF2E56FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7762F50-6BCB-4743-9AF4-47BEFF2E56FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7762F50-6BCB-4743-9AF4-47BEFF2E56FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7762F50-6BCB-4743-9AF4-47BEFF2E56FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {696BE23B-7D40-42ED-BD57-01C48E97C0B4}
+	EndGlobalSection
+EndGlobal
