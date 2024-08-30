@@ -1,4 +1,5 @@
 ﻿using Intelificio_Back.Models.Base;
+using Intelificio_Back.Models.Enums;
 
 namespace Intelificio_Back.Models
 {
