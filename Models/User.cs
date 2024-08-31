@@ -11,6 +11,7 @@ namespace Intelificio_Back.Models
         public string Password { get; set; }
         public string Rut { get; set; }
         public DateTime BirthDate { get; set; }
+        public DateTime Admission { get; set; }
         public Role Role { get; set; }
     }
 }
