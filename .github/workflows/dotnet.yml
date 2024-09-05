@@ -27,6 +27,7 @@ jobs:
   build-docker:
     needs: build
     runs-on: ubuntu-latest
+    environment: actions
     
     steps:
       - name: Log in to Docker Hub
