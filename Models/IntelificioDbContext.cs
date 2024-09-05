@@ -56,6 +56,8 @@ namespace Intelificio_Back.Models
 
         public DbSet<Payment> Payment { get; set; }
 
+        public DbSet<Maintenance> Maintenances { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
