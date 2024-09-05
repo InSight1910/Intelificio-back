@@ -4,6 +4,6 @@ namespace Intelificio_Back.Models
 {
     public class Role : IdentityRole<int>
     {
-        public string Name { get; set; }
+        public required string Name { get; set; }
     }
 }

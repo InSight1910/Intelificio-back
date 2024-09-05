@@ -5,10 +5,11 @@ namespace Intelificio_Back.Models
     public class CommonSpace: BaseEntity
     {
         // falta ID_Comunidad
-        public string name { get; set; }
+        public required string Name { get; set; }
        
-        public int capacity { get; set; }
-        public string availableHours { get; set; }
+        public int Capacity { get; set; }
+        public required string AvailableHours { get; set; }
 
+        public required Community Community { get; set; }
     }
 }

@@ -5,9 +5,9 @@ namespace Intelificio_Back.Models
 {
     public class Payment : BaseEntity
     {
-        public int Amount { get; set; }
-        public DateTime PaymentDate { get; set; }
-        public PaymentType PaymentType { get; set; }
-        public string URL { get; set; }
+        public required int Amount { get; set; }
+        public required DateTime PaymentDate { get; set; }
+        public required PaymentType PaymentType { get; set; }
+        public required string URL { get; set; }
     }
 }

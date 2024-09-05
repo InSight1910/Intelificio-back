@@ -6,6 +6,6 @@ namespace Intelificio_Back.Models
     {   
         public DateTime ClockIn { get; set; }
         public DateTime ClockOut { get; set; }
-        public DateTime date { get; set; }
+        public DateTime Date { get; set; }
     }
 }

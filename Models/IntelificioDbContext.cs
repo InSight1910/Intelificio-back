@@ -61,6 +61,37 @@ namespace Intelificio_Back.Models
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.Entity<Charge>(entity =>
+            {
+                entity.HasKey(p => p.ID);
+                entity.HasOne(p => p.Type)
+                      .WithMany(p => p.Charges);
+            });
+
+            builder.Entity<Expense>(entity => 
+            {  
+                entity.HasKey(p => p.ID);
+                entity.HasOne(p => p.Type)
+                      .WithMany(p => p.Expenses); 
+            });
+
+            builder.Entity<Community>(entity =>
+            {
+                entity.HasKey(p => p.ID);
+                entity.HasMany(p => p.Spaces)
+                      .WithOne(p => p.Community);
+                entity.HasMany(p => p.Contacts)
+                      .WithOne(p => p.Community);
+                entity.HasMany(p => p.Expenses)
+                      .WithOne(p => p.Community);
+                entity.HasMany(p => p.Buildings)
+                      .WithOne(p => p.Community);
+                entity.HasMany(P => P.Maintenances)
+                      .WithOne(p => p.Community);
+  
+            });
+
         }
 
     }
