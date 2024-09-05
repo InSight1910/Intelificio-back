@@ -44,7 +44,7 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          tags: intelificio-back
+          tags: ${{ secrets.DOCKER_USERNAME }}/intelificio-back:latest
           push: true
       - name: Generate artifact attestation
         uses: actions/attest-build-provenance@v1
