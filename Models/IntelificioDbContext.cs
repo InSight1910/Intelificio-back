@@ -76,20 +76,41 @@ namespace Intelificio_Back.Models
                       .WithMany(p => p.Expenses); 
             });
 
+            builder.Entity<Building>(entity =>
+            {
+                entity.HasKey(p => p.ID);
+                entity.HasMany(p => p.Units)
+                      .WithOne(p => p.Building);               
+            });
+
+            builder.Entity<Unit>(entity =>
+            {
+                entity.HasKey(p => p.ID);
+                entity.HasOne(p => p.Type)
+                      .WithMany(p => p.Units);
+            }); 
+
             builder.Entity<Community>(entity =>
             {
                 entity.HasKey(p => p.ID);
+
                 entity.HasMany(p => p.Spaces)
                       .WithOne(p => p.Community);
+
                 entity.HasMany(p => p.Contacts)
                       .WithOne(p => p.Community);
+
                 entity.HasMany(p => p.Expenses)
                       .WithOne(p => p.Community);
+
                 entity.HasMany(p => p.Buildings)
                       .WithOne(p => p.Community);
+
                 entity.HasMany(P => P.Maintenances)
                       .WithOne(p => p.Community);
-  
+
+                entity.HasMany(p =>p.Pets)
+                      .WithOne(p => p.Community);                   
             });
 
         }

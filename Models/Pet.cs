@@ -11,6 +11,6 @@ namespace Intelificio_Back.Models
         public DateTime BirthDate { get; set; }
         public required string PhotoUrl { get; set; }
         public bool IsActive { get; set; }
-
+        public required Community Community { get; set; }
     }
 }

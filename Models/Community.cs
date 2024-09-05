@@ -15,5 +15,6 @@ namespace Intelificio_Back.Models
         public required IEnumerable<Charge> Charges { get; set; }
         public required IEnumerable<Building> Buildings { get; set; }
         public required IEnumerable<Maintenance> Maintenances { get; set; }
+        public required IEnumerable<Pet> Pets { get; set; }
     }
 }
