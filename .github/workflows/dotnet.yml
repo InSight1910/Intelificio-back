@@ -9,31 +9,27 @@ on:
     branches: [ "master" ]
 
 jobs:
-  # build:
-    #runs-on: ubuntu-latest
+   build:
+    runs-on: ubuntu-latest
 
-    #steps:
-    #- uses: actions/checkout@v4
-    #- name: Setup .NET
-     # uses: actions/setup-dotnet@v4
-      #with:
-       # dotnet-version: 8.0.x
-    #- name: Restore dependencies
-     # run: dotnet restore
-    #- name: Build
-     # run: dotnet build --no-restore
-    #- name: Test
-     # run: dotnet test --no-build --verbosity normal
-  build-docker:
-    # needs: build
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+   build-docker:
+    needs: build
     runs-on: ubuntu-latest
     environment: actions
-    
     steps:
       - uses: actions/checkout@v4
-      - name: List files
-        run: ls -al
-
       - name: Log in to Docker Hub
         uses: docker/login-action@v3.3.0
         with:
@@ -46,10 +42,4 @@ jobs:
           file: ./Dockerfile
           tags: ${{ secrets.DOCKER_USERNAME }}/intelificio-back:latest
           push: true
-      - name: Generate artifact attestation
-        uses: actions/attest-build-provenance@v1
-        with:
-          subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
-          subject-digest: ${{ steps.push.outputs.digest }}
-          push-to-registry: true
     
