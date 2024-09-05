@@ -8,5 +8,9 @@ namespace Intelificio_Back.Models
         // Falta ID_Tipo_Gasto
         public int amount {  get; set; }
         public DateTime date { get; set; }
+
+        public ExpenseType Type { get; set; } 
+        
+        public Community Community { get; set; }
     }
 }

@@ -9,7 +9,6 @@ namespace Intelificio_Back.Models
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Service { get; set; }
-
-
+        public Community Community { get; set; }
     }
 }

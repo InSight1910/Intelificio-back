@@ -7,5 +7,6 @@ namespace Intelificio_Back.Models
         public string Name { get; set; }
         //public int CommunityId { get; set; }
         public bool IsActive { get; set; }
+        public Community Community { get; set; }
     }
 }
