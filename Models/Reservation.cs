@@ -7,8 +7,8 @@ namespace Intelificio_Back.Models
     {
         public int CommonAreaId { get; set; }
         public int UserId { get; set; }
-        public DateTime ReservationDate { get; set; }
-        public ReservationStatus Status { get; set; }
+        public required DateTime ReservationDate { get; set; }
+        public required ReservationStatus Status { get; set; }
 
     }
 }

@@ -9,6 +9,6 @@ namespace Intelificio_Back.Models
         public DateTime ChargeDate { get; set; }
         public bool IsActive { get; set; }
 
-        public ChargeType Type { get; set; }
+        public required ChargeType Type { get; set; }
     }
 }

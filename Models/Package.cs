@@ -5,9 +5,9 @@ namespace Intelificio_Back.Models
 {
     public class Package : BaseEntity
     {
-        public string Notes { get; set; }
-        public DateTime ReceptionDate { get; set; }
-        public PackageStatus Status { get; set; }
+        public required string Notes { get; set; }
+        public required DateTime ReceptionDate { get; set; }
+        public required PackageStatus Status { get; set; }
     }
 
 }

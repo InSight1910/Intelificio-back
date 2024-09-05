@@ -4,9 +4,9 @@ namespace Intelificio_Back.Models
 {
     public class Visit : BaseEntity
     {
-        public string Name { get; set; }
-        public string Rut { get; set; }
-        public string Plate { get; set; }
+        public required string Name { get; set; }
+        public required string Rut { get; set; }
+        public required string Plate { get; set; }
 
     }
 }

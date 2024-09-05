@@ -4,8 +4,8 @@ namespace Intelificio_Back.Models
 {
     public class ExpenseType : BaseEntity
     {
-        public string Description { get; set; }
+        public required string Description { get; set; }
 
-        public IEnumerable<Expense> Expenses { get; set; }
+        public required IEnumerable<Expense> Expenses { get; set; }
     }
 }

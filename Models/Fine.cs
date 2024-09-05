@@ -5,9 +5,9 @@ namespace Intelificio_Back.Models
 {
     public class Fine : BaseEntity
     {
-        public string Name { get; set; }
-        public decimal Amount { get; set; }
-        public FineDenomination Status { get; set; }
+        public required string Name { get; set; }
+        public required decimal Amount { get; set; }
+        public required FineDenomination Status { get; set; }
 
     }
 }

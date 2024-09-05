@@ -4,8 +4,8 @@ namespace Intelificio_Back.Models
 {
     public class ChargeType: BaseEntity
     {
-        public string Description { get; set; }
+        public required string Description { get; set; }
 
-        public IEnumerable<Charge> Charges { get; set; }
+        public required IEnumerable<Charge> Charges { get; set; }
     }
 }

@@ -6,8 +6,8 @@ namespace Intelificio_Back.Models
         public DateTime PostDate { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public string Description { get; set; }
+        public required string Description { get; set; }
         public bool IsActive { get; set; }
-        public Community Community { get; set; }
+        public required Community Community { get; set; }
     }
 }
