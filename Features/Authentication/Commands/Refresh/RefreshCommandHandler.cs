@@ -1,5 +1,6 @@
 ﻿using Intelificio_Back.Common.Response;
 using Intelificio_Back.Features.Authentication.Common;
+using Intelificio_Back.Models;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
@@ -14,10 +15,10 @@ namespace Intelificio_Back.Features.Authentication.Commands.Refresh
 
             var user = await userManager.FindByEmailAsync(principals.Claims.Where(e => e.Type.Equals(ClaimTypes.Email)).First().Value);
 
-            if (!user.RefreshToken.Equals(request.RefreshToken) && user.RefreshTokenExpiration <= DateTime.Now)
+            if (!user.RefreshToken.Equals(request.RefreshToken) && user.RefreshTokenExpiry <= DateTime.Now)
             {
                 user.RefreshToken = null;
-                user.RefreshTokenExpiration = null;
+                user.RefreshTokenExpiry = null;
                 var responseRevokeRefresh = await userManager.UpdateAsync(user);
                 if (responseRevokeRefresh.Succeeded)
                 {
@@ -36,11 +37,11 @@ namespace Intelificio_Back.Features.Authentication.Commands.Refresh
             var refreshToken = jwtService.GenerateRefreshToken();
 
             user.RefreshToken = refreshToken;
-            user.RefreshTokenExpiration = DateTime.Now.AddMinutes(configuration.GetValue<double>("Authentication:Schemes:Bearer:RefreshTokenValidityInDays"));
+            user.RefreshTokenExpiry = DateTime.Now.AddMinutes(configuration.GetValue<double>("Authentication:Schemes:Bearer:RefreshTokenValidityInDays"));
             var response = await userManager.UpdateAsync(user);
             if (response.Succeeded)
             {
-                return Result.SuccessWithResponse(new AZ_204.Common.Response.ResponseData
+                return Result.SuccessWithResponse(new ResponseData
                 {
                     Data = new RefreshCommandResponse
                     {

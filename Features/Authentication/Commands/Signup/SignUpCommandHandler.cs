@@ -1,4 +1,4 @@
-﻿using AutoMapper
+﻿using AutoMapper;
 using Intelificio_Back.Common.Response;
 using Intelificio_Back.Features.Authentication.Common;
 using Intelificio_Back.Models;
