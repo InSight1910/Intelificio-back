@@ -13,5 +13,7 @@ namespace Intelificio_Back.Models
         public DateTime BirthDate { get; set; }
         public DateTime Admission { get; set; }
         public required Role Role { get; set; }
+        public string RefreshToken { get; set; } = string.Empty;
+        public DateTime RefreshTokenExpiry { get; set; } = DateTime.MinValue;
     }
 }
