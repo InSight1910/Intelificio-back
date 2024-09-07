@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Intelificio_Back.Models
 {
@@ -13,5 +14,17 @@ namespace Intelificio_Back.Models
         public DateTime BirthDate { get; set; }
         public DateTime Admission { get; set; }
         public required Role Role { get; set; }
+
+        public required IEnumerable<Community> Communities { get; set; }
+
+        public IEnumerable<Attendance> Attendances { get; set; } = Enumerable.Empty<Attendance>();
+
+        public IEnumerable<AssignedShift> AssignedShifts { get; set; } = Enumerable.Empty<AssignedShift>();
+
+        public IEnumerable<Visit> Visits { get; set; } = Enumerable.Empty<Visit>();
+
+        public  IEnumerable<Reservation> Reservations { get; set; } = Enumerable.Empty<Reservation>();
+
+
     }
 }
