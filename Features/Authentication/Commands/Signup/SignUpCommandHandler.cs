@@ -15,7 +15,6 @@ namespace Intelificio_Back.Features.Authentication.Commands.Signup
             if (userExist != null) return Result.Failure(AuthenticationErrors.AlreadyCreated);
 
             var user = mapper.Map<User>(request);
-            user.UserName = request.Email;
 
             var result = await userManager.CreateAsync(user, request.Password);
 
@@ -31,5 +30,6 @@ namespace Intelificio_Back.Features.Authentication.Commands.Signup
 
             return Result.Success();
         }
+
     }
 }

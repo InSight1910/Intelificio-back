@@ -17,7 +17,7 @@ namespace Intelificio_Back.Features.Authentication.Commands.Login
 
             if (!user.EmailConfirmed) return Result.Failure(AuthenticationErrors.EmailNotConfirmed);
 
-            if (!user.LockoutEnabled) return Result.Failure(AuthenticationErrors.UserBlocked);
+            if (user.LockoutEnabled) return Result.Failure(AuthenticationErrors.UserBlocked);
 
             if (!await userManager.CheckPasswordAsync(user, request.Password))
             {
@@ -29,7 +29,7 @@ namespace Intelificio_Back.Features.Authentication.Commands.Login
             string refreshToken = tokenProvider.CreateRefreshToken();
 
             user.RefreshToken = refreshToken;
-            user.RefreshTokenExpiry = DateTime.Now.AddMinutes(configuration.GetValue<double>("Authentication:Schemes:Bearer:RefreshTokenValidityInDays"));
+            user.RefreshTokenExpiry = DateTime.Now.AddMinutes(configuration.GetValue<double>("Jwt:RefreshTokenExpireInMinutes"));
             _ = await userManager.UpdateAsync(user);
             var response = new ResponseData
             {

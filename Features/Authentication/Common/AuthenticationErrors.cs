@@ -16,9 +16,7 @@ namespace Intelificio_Back.Features.Authentication.Common
             "Authentication.LogIn.UserBlocked", "User is lockout", new List<string> { "The account is block." });
         public static Error InvalidCredentials(IEnumerable<string> errors) => new Error(
             "Authentication.Login.InvalidCredentials", "Invalid Credentials", errors);
-        public static Error RefreshTokenExpired => new Error(
-            "Authentication.Refresh.RefreshTokenExpired", "Refresh Token");
         public static Error RefreshTokenError(IEnumerable<string> errors) => new Error(
-            "Authentication.Refresh.RefreshTokenError", "Error updating user", errors);
+            "Authentication.Refresh.RefreshTokenError", "Error is an error with the Refresh Token", errors);
     }
 }
